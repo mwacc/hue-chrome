@@ -5,6 +5,6 @@ There is very common situation when several hive queries are running from Hue an
 This extension show notification as soon as any hive queries runed from Hue is finished.
 
 
-Please, enable notification before using
+Please, enable Chrome Notifications before using
 -----------------------------
 Read more [https://support.google.com/chrome/answer/3220216?hl=en-GB](https://support.google.com/chrome/answer/3220216?hl=en-GB)
