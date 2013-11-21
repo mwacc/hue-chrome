@@ -1,4 +1,4 @@
-function showNotification(tabId) {
+function showNotification(tabId, source, img) {
 	var q = 'Unknown'
 	try {
 		q = document.getElementById("query").textContent.trim().substring(0,180)
@@ -6,8 +6,8 @@ function showNotification(tabId) {
 		console.log(e.message)
 	}
 	var notification = window.webkitNotifications.createNotification(
-      	'http://cdn.dice.com/wp-content/uploads/2013/06/elephant_rgb_sq.png',
-      	'Hive query was completed!',
+      	img,
+      	source + ' was completed!',
     	q
     );
     
@@ -26,7 +26,7 @@ function notify() {
     // 0 is PERMISSION_ALLOWED
 
     chrome.runtime.sendMessage({greeting: "initialstep"}, function(response) {
-	  showNotification(response.answer)
+	  showNotification(response.answer, response.source, response.img)
 	});
 
   } else {
