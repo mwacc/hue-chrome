@@ -1,8 +1,14 @@
 function showNotification(tabId) {
+	var q = 'Unknown'
+	try {
+		q = document.getElementById("query").textContent.trim().substring(0,180)
+	} catch(e) {
+		console.log(e.message)
+	}
 	var notification = window.webkitNotifications.createNotification(
       	'http://cdn.dice.com/wp-content/uploads/2013/06/elephant_rgb_sq.png',
-      	'Hue job was completed!',
-    	'Hue job was executed and the result is available in Hue now'
+      	'Hive query was completed!',
+    	q
     );
     
     notification.onclick = function () {
