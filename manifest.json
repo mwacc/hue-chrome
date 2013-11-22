@@ -1,16 +1,17 @@
 {
     "name":"Hue Notifier",
-    "version":"0.1.20",
+    "version":"0.2.0",
     "manifest_version":2,
     "description":"Notify when Hue finished execution of job",
     "permissions": [ 
         "notifications", 
         "tabs", 
-        "*://*/beeswax/results/*" 
+        "*://*/beeswax/results/*",
+        "*://*/impala/results/*" 
         ],
     "content_scripts":[
         {
-            "matches":["*://*/beeswax/results/*"],
+            "matches":["*://*/beeswax/results/*", "*://*/impala/results/*"],
             "js":[ "script.js"],
             "run_at" : "document_idle"
         }
